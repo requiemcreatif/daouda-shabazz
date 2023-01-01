@@ -1,10 +1,12 @@
-# Getting Started with Create React App
+# Daouda Shabazz Official Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is project is to create a new website / portfolio for Daouda Shabazz, A talented French photographer. [Have a look on Instagram](https://www.instagram.com/daoudashabazz/).
 
-## Available Scripts
+## Tech Used
 
-In the project directory, you can run:
+React.
+Styled Components.
+Node.js.
 
 ### `npm start`
 
