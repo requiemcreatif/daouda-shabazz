@@ -4,11 +4,11 @@ This is project is to create a new website / portfolio for Daouda Shabazz, A tal
 
 ## Tech Used
 
-React.
-Styled Components.
-Node.js.
+- React.
+- Styled Components.
+- Node.js.
 
-### `npm start`
+### `Sestions`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
