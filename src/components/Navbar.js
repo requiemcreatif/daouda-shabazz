@@ -8,17 +8,36 @@ const NavbarDiv = styled.div`
   margin: 0 auto;
   background-color: #000;
   color: #fff;
-  height: 5vh;
+  height: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem 2rem;
   gap: 4rem;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 `;
 
 const SocialDiv = styled.div`
   display: flex;
   gap: 2rem;
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  li {
+    cursor: pointer;
+    &:hover {
+      color: #aa2323;
+    }
+  }
   @media (max-width: 768px) {
     display: none;
   }
@@ -59,8 +78,14 @@ const Navbar = () => {
         </ul>
       </Nav>
       <SocialDiv>
-        <AiOutlineInstagram />
-        <ImFacebook />
+        <ul>
+          <li>
+            <AiOutlineInstagram />
+          </li>
+          <li>
+            <ImFacebook />
+          </li>
+        </ul>
       </SocialDiv>
     </NavbarDiv>
   );
