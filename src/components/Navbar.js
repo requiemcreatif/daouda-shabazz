@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import "../App.css";
 import { ImFacebook } from "react-icons/im";
 import { AiOutlineInstagram } from "react-icons/ai";
 
@@ -66,7 +67,7 @@ const Nav = styled.nav`
   }
 `;
 
-const Navbar = () => {
+const Navbar = ({ isDarkTheme, toggleTheme }) => {
   return (
     <NavbarDiv>
       <Nav>
@@ -87,6 +88,10 @@ const Navbar = () => {
           </li>
         </ul>
       </SocialDiv>
+      <label className="switch">
+        <input type="checkbox" checked={isDarkTheme} onChange={toggleTheme} />
+        <span className="slider"></span>
+      </label>
     </NavbarDiv>
   );
 };
