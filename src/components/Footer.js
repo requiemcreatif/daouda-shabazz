@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterDiv = styled.div`
-  background-color: #aa2323;
+  //background-color: #aa2323;
+  background-color: #000;
   color: #fff;
   height: 6rem;
   display: flex;

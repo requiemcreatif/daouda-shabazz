@@ -21,6 +21,10 @@ const NavbarDiv = styled.div`
   left: 0;
   right: 0;
   z-index: 100;
+
+  label {
+    //padding-left: 10rem;
+  }
 `;
 
 const SocialDiv = styled.div`
@@ -69,7 +73,7 @@ const Nav = styled.nav`
 
 const Navbar = ({ isDarkTheme, toggleTheme }) => {
   return (
-    <NavbarDiv>
+    <NavbarDiv className="navbar-div">
       <Nav>
         <ul>
           <li>PORTRAITS</li>

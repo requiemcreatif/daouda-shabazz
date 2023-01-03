@@ -23,7 +23,7 @@ const HeroContainer = styled.div`
 
   p {
     text-align: center;
-    max-width: 800px;
+    max-width: 700px;
     line-height: 1.5;
     font-size: 1.5rem;
     font-weight: 300;
@@ -34,6 +34,13 @@ const HeroContainer = styled.div`
     font-size: 1.3rem;
     font-weight: 300;
     text-align: center;
+
+    @media (max-width: 768px) {
+      //max-width: 280px;
+      //font-size: 1.2rem;
+      //text-align: left;
+      font-weight: 400;
+    }
   }
 
   span {
@@ -66,9 +73,10 @@ const Hero = ({ isDarkTheme }) => {
 
       <p className="quote hero-text">
         <em>
-          "Photographier un portrait me fait voyager sans connaitre la trajectoire, Découvrir
-          l'inconnu dans un regard, Et autant d'êtres humains que de passerelles, Me font voler sans
-          aile." <br />
+          "Photographier un portrait me fait voyager sans connaitre la trajectoire,
+          <br /> Découvrir l'inconnu dans un regard,
+          <br /> Et autant d'êtres humains que de passerelles,
+          <br /> Me font voler sans aile." <br />
           <span>Daouda Shabazz</span>
         </em>
       </p>

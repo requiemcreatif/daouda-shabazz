@@ -69,6 +69,10 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: ${({ theme }) => theme.heroTextFontWeight};
 }
 
+.navbar-div {
+  background-color: ${({ theme }) => theme.navDiv};
+}
+
     
 `;
 export const lightTheme = {
@@ -76,6 +80,7 @@ export const lightTheme = {
   heroDiv: "#fff",
   heroText: "#000",
   heroTextFontWeight: "400",
+  //navDiv: "#fff",
 };
 export const darkTheme = {
   body: "#000",
