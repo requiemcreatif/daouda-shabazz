@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const HeroContainer = styled.div`
   padding-top: 15rem;
-  background-color: #000;
+  //background-color: #000567;
   max-height: auto;
   max-width: 2000px;
   margin: 0 auto;
