@@ -1,9 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import CardGrid from "./components/CardGrid";
-import Footer from "./components/Footer";
+import Portraits from "./pages/Portraits";
 
 // dark mode implementation
 import { ThemeProvider } from "styled-components";
@@ -17,10 +14,7 @@ function App() {
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <div>
         <GlobalStyles />
-        <Navbar toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
-        <Hero isDarkTheme={isDarkTheme} />
-        <CardGrid />
-        <Footer />
+        <Portraits toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
       </div>
     </ThemeProvider>
   );

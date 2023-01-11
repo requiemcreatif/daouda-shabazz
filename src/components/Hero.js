@@ -44,7 +44,10 @@ const HeroContainer = styled.div`
   }
 
   span {
-    color: #aa2323;
+    &:hover {
+      color: #aa2323;
+      cursor: pointer;
+    }
   }
 
   img {
