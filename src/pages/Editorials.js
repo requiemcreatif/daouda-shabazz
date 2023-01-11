@@ -1,13 +1,15 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import Footer from "../components/Footer";
 
-const Editorials = () => {
+import Footer from "../components/Footer";
+import EditorialContent from "../components/editorial/EditorialContent";
+
+const Editorials = ({ toggleTheme, isDarkTheme }) => {
   return (
     <div>
-      <Navbar />
-      <Hero />
+      <Navbar toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+      {/* <Hero /> */}
+      <EditorialContent toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
       <Footer />
     </div>
   );

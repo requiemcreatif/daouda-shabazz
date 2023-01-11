@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import "../App.css";
 import { ImFacebook } from "react-icons/im";
@@ -22,8 +23,21 @@ const NavbarDiv = styled.div`
   right: 0;
   z-index: 100;
 
-  label {
-    //padding-left: 10rem;
+  .active {
+    color: #aa2323;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+      color: #aa2323;
+    }
+
+    &:active {
+      color: #aa2323;
+    }
   }
 `;
 
@@ -41,6 +55,7 @@ const SocialDiv = styled.div`
     cursor: pointer;
     &:hover {
       color: #aa2323;
+      text-decoration: none;
     }
   }
   @media (max-width: 768px) {
@@ -72,14 +87,31 @@ const Nav = styled.nav`
 `;
 
 const Navbar = ({ isDarkTheme, toggleTheme }) => {
+  const location = useLocation();
   return (
     <NavbarDiv className="navbar-div">
       <Nav>
         <ul>
-          <li>PORTRAITS</li>
-          <li>EDITORIALS</li>
-          <li>A PROPOS</li>
-          <li>CONTACT</li>
+          <li>
+            <Link to="/portraits" className={location.pathname === "/portraits" ? "active" : ""}>
+              PORTRAITS
+            </Link>
+          </li>
+          <li>
+            <Link to="/editorials" className={location.pathname === "/editorials" ? "active" : ""}>
+              EDITORIALS
+            </Link>
+          </li>
+          <li>
+            <Link to="/apropos" className={location.pathname === "/apropos" ? "active" : ""}>
+              A PROPOS
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className={location.pathname === "/contact" ? "active" : ""}>
+              CONTACT
+            </Link>
+          </li>
         </ul>
       </Nav>
       <SocialDiv>

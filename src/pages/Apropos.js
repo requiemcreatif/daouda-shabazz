@@ -3,10 +3,10 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 
-const Apropos = () => {
+const Apropos = ({ toggleTheme, isDarkTheme }) => {
   return (
     <div>
-      <Navbar />
+      <Navbar toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
       <Hero />
       <Footer />
     </div>
