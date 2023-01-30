@@ -18,6 +18,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles, lightTheme, darkTheme } from "./functionalities/theme";
 import Editorials from "./pages/editorial/Editorials";
 import Apropos from "./pages/aPropos/Apropos";
+import Contact from "./pages/contact/Contact";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -43,7 +44,7 @@ function App() {
           />
           <Route
             path="/contact"
-            element={<Apropos toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />}
+            element={<Contact toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />}
           />
           <Route
             path="/clemence"
