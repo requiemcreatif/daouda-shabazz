@@ -4,9 +4,9 @@ import styled from "styled-components";
 import Footer from "../../components/footer/Footer";
 import EditorialContent from "../../components/editorial/EditorialContent";
 
-const EditDiv = styled.div`
+export const EditDiv = styled.div`
   display: grid;
-  align-items: center;
+  grid-template-rows: auto 1fr auto;
 `;
 
 const Editorials = ({ toggleTheme, isDarkTheme }) => {

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { editorialList } from "../../pages/editorial/editorialList";
 
@@ -23,7 +24,9 @@ const EditorialContent = () => {
   return (
     <EditDiv>
       {editorialList.map((image) => (
-        <img src={image.imgURL} alt="editorial" key={image.id} />
+        <Link to={`/${image.page}`}>
+          <img src={image.imgURL} alt="editorial" key={image.id} />
+        </Link>
       ))}
     </EditDiv>
   );
