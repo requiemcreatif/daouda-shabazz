@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "./App.css";
-import Portraits from "./pages/Portraits";
+import Portraits from "./pages/portraits/Portraits";
 import { Link, Router, Routes, Navigate, BrowserRouter, Route } from "react-router-dom";
 
 // dark mode implementation
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, lightTheme, darkTheme } from "./functionalities/theme";
-import Editorials from "./pages/Editorials";
-import Apropos from "./pages/Apropos";
+import Editorials from "./pages/editorial/Editorials";
+import Apropos from "./pages/aPropos/Apropos";
 
 function App() {
   const [theme, setTheme] = useState("light");

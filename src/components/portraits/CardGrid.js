@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { portraitList } from "../portraitList";
+import { portraitList } from "../../pages/portraits/portraitList";
 import styled from "styled-components";
 
 const CardGridDiv = styled.div`

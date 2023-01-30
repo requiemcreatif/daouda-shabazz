@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
-import Image1 from "../../images/editorials/clemence/6-DSCF9103.jpg";
-import Image2 from "../../images/editorials/ares/2-DSCF4089.jpg";
-import Image3 from "../../images/editorials/lowrider/6-DSCF0999.jpg";
-import Image4 from "../../images/editorials/isakin/2-86F5929B-C13E-427E-8C61-75C43790D872-38121-0000177CCFFD118D.jpg";
+import { editorialList } from "../../pages/editorial/editorialList";
 
 const EditDiv = styled.div`
   padding: 10rem 2rem 2rem 2rem;
@@ -13,6 +9,8 @@ const EditDiv = styled.div`
   grid-gap: 2rem;
   img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   @media (max-width: 768px) {
@@ -24,10 +22,9 @@ const EditDiv = styled.div`
 const EditorialContent = () => {
   return (
     <EditDiv>
-      <img src={Image1} alt="Image1" />
-      <img src={Image2} alt="Image1" />
-      <img src={Image3} alt="Image1" />
-      <img src={Image4} alt="Image1" />
+      {editorialList.map((image) => (
+        <img src={image.imgURL} alt="editorial" key={image.id} />
+      ))}
     </EditDiv>
   );
 };
