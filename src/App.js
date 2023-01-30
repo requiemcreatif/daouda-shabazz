@@ -19,7 +19,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path="/portraits"
+            path="/"
             element={<Portraits toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />}
           />
           <Route

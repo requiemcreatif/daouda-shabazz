@@ -93,7 +93,7 @@ const Navbar = ({ isDarkTheme, toggleTheme }) => {
       <Nav>
         <ul>
           <li>
-            <Link to="/portraits" className={location.pathname === "/portraits" ? "active" : ""}>
+            <Link to="/" className={location.pathname === "/portraits" ? "active" : ""}>
               PORTRAITS
             </Link>
           </li>

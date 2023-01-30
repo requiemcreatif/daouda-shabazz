@@ -10,6 +10,7 @@ const Portraits = ({ toggleTheme, isDarkTheme }) => {
       <Navbar toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
       <Hero isDarkTheme={isDarkTheme} />
       <CardGrid />
+
       <Footer />
     </div>
   );
