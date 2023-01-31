@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import "../App.css";
 import { ImFacebook } from "react-icons/im";
@@ -7,25 +8,36 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 import MobileNav from "./MobileNav";
 
+const MobileWrapper = styled.div`
+  padding-top: 2rem;
+  margin-right: 5rem;
+  .nav-switch {
+    display: none;
+    padding-bottom: 2rem;
+
+    @media (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 26rem;
+    }
+  }
+`;
+
+const Div = styled.div`
+  .mob-menu {
+    //create a smooth transition
+    transition: all 0.5s ease-in-out;
+  }
+`;
+
 const NavbarDiv = styled.div`
   @media (max-width: 768px) {
     .full-switch {
       display: none;
     }
   }
-  .nav-switch {
-    display: none;
 
-    @media (max-width: 768px) {
-      //margin: 0 auto;
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-      gap: 25rem;
-    }
-  }
-  //max-width: 2000px;
   margin: 0 auto;
   background-color: #000;
   color: #fff;
@@ -35,15 +47,14 @@ const NavbarDiv = styled.div`
   align-items: center;
   padding: 1rem 2rem;
   gap: 4rem;
-
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
 
-  .mobile-nav {
-    display: none;
+  .closed {
+    //display: none;
   }
 
   .active {
@@ -86,7 +97,6 @@ export const SocialDiv = styled.div`
   }
 `;
 const Nav = styled.nav`
-  //margin: 0 auto;
   ul {
     display: flex;
     list-style: none;
@@ -115,14 +125,31 @@ const style = {
 };
 
 const Navbar = ({ isDarkTheme, toggleTheme }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    console.log("opened");
+    setIsOpen(!isOpen);
+    document.querySelector(".mobile-nav").classList.toggle("closed");
+  };
+
   const location = useLocation();
   return (
     <>
+      <Div className="mobile-nav ">
+        <motion.div
+          animate={{ x: isOpen ? 0 : -1000 }}
+          initial={{ x: -100 }}
+          transition={{ duration: 0.3 }}
+          className="mob-menu">
+          {isOpen && (
+            <div>
+              <MobileNav toggle={toggle} isOpen={isOpen} setIsOpen={setIsOpen} />
+            </div>
+          )}
+        </motion.div>
+      </Div>
       <NavbarDiv className="navbar-div">
-        <div className="mobile-nav">
-          <MobileNav />
-        </div>
-
         <Nav>
           <ul>
             <li>
@@ -163,15 +190,16 @@ const Navbar = ({ isDarkTheme, toggleTheme }) => {
           <input type="checkbox" checked={isDarkTheme} onChange={toggleTheme} />
           <span className="slider"></span>
         </label>
-        <div className="nav-switch">
-          <label className="switch">
-            <input type="checkbox" checked={isDarkTheme} onChange={toggleTheme} />
-            <span className="slider"></span>
-          </label>
-          <div>
-            <GiHamburgerMenu style={style} />
+        <MobileWrapper>
+          <div className="nav-switch">
+            <label className="switch">
+              <input type="checkbox" checked={isDarkTheme} onChange={toggleTheme} />
+              <span className="slider"></span>
+            </label>
+
+            <GiHamburgerMenu style={style} onClick={toggle} />
           </div>
-        </div>
+        </MobileWrapper>
       </NavbarDiv>
     </>
   );

@@ -9,6 +9,7 @@
     "aws-sdk": "^2.1294.0",
     "axios": "^1.2.3",
     "cra-template": "1.2.0",
+    "framer-motion": "^8.5.5",
     "lazyload": "^2.0.0-rc.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -8,13 +8,13 @@ import styled from "styled-components";
 
 const StyledContact = styled.div`
   .main-layout {
-    min-height: 150vh;
-    min-height: 151.5dvh;
+    min-height: 100vh;
+    min-height: 105dvh;
     display: grid;
 
     @media (max-width: 768px) {
       min-height: 100vh;
-      min-height: 114dvh;
+      min-height: 101dvh;
     }
   }
 `;

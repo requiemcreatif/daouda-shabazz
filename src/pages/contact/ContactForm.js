@@ -4,7 +4,7 @@ import Styled from "styled-components";
 
 const StyledForm = Styled.div`
     max-width: 800px;
-    margin: 10rem auto 0 auto;
+    margin: 2rem auto ;
     padding: 2rem 2rem 10rem 2rem;
 
     .contact-text {
@@ -19,12 +19,18 @@ const StyledForm = Styled.div`
         grid-gap: 1rem;
 
         input {
+          margin-bottom: 1rem;
             padding: 1.5rem;
             border: 1px solid #ccc;
             border-radius: 5px;
+
+            &:focus {
+                outline: none;
+            }
         }
 
         input[type="submit"] {
+
             background-color: #000;
             color: #fff;
             border: none;
@@ -36,14 +42,23 @@ const StyledForm = Styled.div`
             &:hover {
                 background-color: #aa2323;
             }
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
         }
 
 
 
         textarea {
+          margin-bottom: 1rem;
             padding: 1.5rem;
             border: 1px solid #ccc;
             border-radius: 5px;
+
+            &:focus {
+                outline: none;
+            }
         }
 
         .name {
@@ -91,7 +106,7 @@ const ContactForm = ({ toggleTheme, isDarkTheme }) => {
           placeholder="Email"
           {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
         />
-        <textarea {...register("Message", {})} />
+        <textarea {...register("Message", {})} rows="10" />
 
         <input type="submit" />
       </form>

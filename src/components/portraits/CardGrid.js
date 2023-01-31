@@ -7,7 +7,8 @@ const CardGridDiv = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
-  margin: 1rem;
+  margin-top: 10rem;
+  padding: 2rem;
 
   img {
     width: 100%;
