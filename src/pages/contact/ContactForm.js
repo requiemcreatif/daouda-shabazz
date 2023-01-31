@@ -4,8 +4,14 @@ import Styled from "styled-components";
 
 const StyledForm = Styled.div`
     max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+    margin: 10rem auto 0 auto;
+    padding: 2rem 2rem 10rem 2rem;
+
+    .contact-text {
+        margin-top: 10rem;
+        margin-bottom: 7rem;
+
+    }
     form {
         display: grid;
         grid-template-columns: 1fr;
@@ -13,7 +19,7 @@ const StyledForm = Styled.div`
         grid-gap: 1rem;
 
         input {
-            padding: 1rem;
+            padding: 1.5rem;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
@@ -23,7 +29,7 @@ const StyledForm = Styled.div`
             color: #fff;
             border: none;
             border-radius: 5px;
-            padding: 1rem;
+            padding: 1.5rem;
             cursor: pointer;
             width: 20%;
 
@@ -35,7 +41,7 @@ const StyledForm = Styled.div`
 
 
         textarea {
-            padding: 1rem;
+            padding: 1.5rem;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
@@ -60,6 +66,12 @@ const ContactForm = ({ toggleTheme, isDarkTheme }) => {
 
   return (
     <StyledForm>
+      <div className="contact-text">
+        <p>
+          Pour les tarifs, les réservations et toutes autres demandes, envoyez un e-mail ou
+          remplissez le formulaire ci-dessous.
+        </p>
+      </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="name">
           <input

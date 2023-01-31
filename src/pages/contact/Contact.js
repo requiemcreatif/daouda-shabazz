@@ -7,17 +7,27 @@ import EditDiv from "../editorial/Editorials";
 import styled from "styled-components";
 
 const StyledContact = styled.div`
-  //display: grid;
-  grid-template-rows: auto 1fr auto;
+  .main-layout {
+    min-height: 150vh;
+    min-height: 151.5dvh;
+    display: grid;
+
+    @media (max-width: 768px) {
+      min-height: 100vh;
+      min-height: 114dvh;
+    }
+  }
 `;
 
 const Contact = ({ toggleTheme, isDarkTheme }) => {
   return (
     <StyledContact>
-      <Navbar toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
-      <Hero />
-      <ContactForm />
-      <Footer />
+      <div className="main-layout">
+        <Navbar toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+
+        <ContactForm />
+        <Footer />
+      </div>
     </StyledContact>
   );
 };

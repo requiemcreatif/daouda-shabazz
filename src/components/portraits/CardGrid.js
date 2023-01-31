@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { portraitList } from "../../pages/portraits/portraitList";
 import styled from "styled-components";
 
@@ -26,9 +26,14 @@ const CardGridDiv = styled.div`
 `;
 
 const CardGrid = () => {
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    setList(portraitList);
+  }, []);
   return (
     <CardGridDiv>
-      {portraitList.map((image) => (
+      {list.map((image) => (
         <img src={image.imgURL} alt="portrait" key={image.id} />
       ))}
     </CardGridDiv>

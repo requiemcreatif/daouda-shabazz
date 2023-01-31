@@ -27,6 +27,7 @@ function App() {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
+
       <BrowserRouter>
         <Routes>
           <Route
